@@ -79,30 +79,6 @@ namespace Components
                 WidthRequest = value;
             }
         }
-        public SwipeEnum SwpieType { get; set; }
-        public enum SwipeEnum
-        {
-            /// <summary>
-            /// Y less then 0
-            /// </summary>
-            SwipeUP,
-            /// <summary>
-            /// Y more then 0
-            /// </summary>
-            SwipeDoun,
-            /// <summary>
-            /// X more them 0
-            /// </summary>
-            SwpieRight,
-            /// <summary>
-            /// X less then 0
-            /// </summary>
-            SwipeLeft,
-            /// <summary>
-            /// 手勢未判定完成
-            /// </summary>
-            Unknown,
-        }
         #endregion
         public SwipeGestureGrid()
         {
