@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:components="clr-namespace:Components;assembly=Components"
+             x:Class="Pages.PageXaml">
+    <ContentPage.Content>
+        <ListView x:Name="lsvData"
+                  HasUnevenRows="True"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Fill"
+                  BackgroundColor="Gray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid HeightRequest="60">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Label HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand"
+                                   FontAttributes="Bold"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="Black"
+                                   Text="{Binding .}"
+                                   BackgroundColor="Silver"
+                                   LineBreakMode="TailTruncation"
+                                   FontSize="Small"/>
+                            <components:SwipeGestureGrid HorizontalOptions="FillAndExpand"
+                                                         VerticalOptions="FillAndExpand"
+                                                         HeightRequest="60"
+                                                         SwipeLeft="GridTemplate_SwipeLeft"
+                                                         SwipeRight="GridTemplate_SwipeRight"
+                                                         Tapped="GridTemplate_Tapped">
+                                
+                            </components:SwipeGestureGrid>
+                            <components:ImageButton Grid.Column="1" Source="Delete"
+                                                    Clicked="BtnCellDelete_Clicked"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
